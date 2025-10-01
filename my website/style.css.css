@@ -1,0 +1,180 @@
+:root {
+  --primary: #20435c;
+  --secondary: #e6842a;
+  --accent: #a83d4d;
+  --bg: #f6f4ee;
+  --text: #222;
+  --card: #fff;
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+[data-theme="dark"] {
+  --primary: #f6f4ee;
+  --bg: #23272f;
+  --text: #f6f4ee;
+  --card: #2c2f36;
+  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.2rem 1rem;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.logo-animate {
+  width: 120px;
+  margin: 0 auto 1.2rem;
+  display: block;
+  animation: logoIn 1.2s cubic-bezier(.6,0,.39,.98);
+}
+@keyframes logoIn {
+  0% { opacity:0; transform:scale(0.7) rotate(-15deg);}
+  60% {opacity:1; transform:scale(1.15) rotate(10deg);}
+  100% {opacity:1; transform:scale(1) rotate(0);}
+}
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+nav {
+  margin: 0.7rem auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+.navbar {
+  background: var(--card, #fff);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 0.7rem 0;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.navbar li a {
+  color: var(--primary, #20435c);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.navbar li a:hover, .navbar li a:focus {
+  background: var(--secondary, #e6842a);
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .navbar ul {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar {
+    padding: 1rem 0;
+  }
+}
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+section {
+  margin-bottom: 2.5rem;
+}
+h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1.3rem;}
+.card, .project-card, .ebook-card {
+  background: var(--card);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  padding: 1.3rem;
+  margin-bottom: 1.2rem;
+  transition: background 0.3s;
+}
+.about-me p { font-size: 1.18rem; line-height:1.7;}
+.social-row {
+  display: flex;
+  gap: 1.3rem;
+  margin-top: 0.8rem;
+}
+.social-row a {
+  font-size: 1.65rem;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.social-row a:hover { color: var(--secondary);}
+.project-list, .thumb-list, .video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.3rem;
+}
+.project-card img, .thumb-card img, .ebook-card img, .video-card img {
+  width:100%; border-radius: 0.65rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin-bottom:0.7rem;
+  object-fit:cover;
+  max-height: 180px;
+}
+.project-card h3, .thumb-card h3, .video-card h3, .ebook-card h3 {
+  margin: 0.2rem 0 0.5rem 0;
+  color: var(--primary);
+  font-size: 1.12rem;
+}
+.project-card p, .thumb-card p, .video-card p, .ebook-card p {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+.btn, .view-btn, .download-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-right:0.5rem;
+  transition: background 0.2s;
+}
+.btn:hover, .view-btn:hover, .download-btn:hover { background: var(--secondary);}
+.download-btn {
+  padding: 0.4rem 0.7rem;
+  background: var(--primary);
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+.download-btn i {
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
+footer {
+  text-align:center;
+  padding:1.2rem;
+  background:var(--card);
+  color:var(--primary);
+  font-size:1rem;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  header { padding: 1.2rem 0.3rem;}
+  .logo-animate { width: 78px;}
+  nav { gap: 1rem; font-size: 1rem;}
+  main { padding: 0.5rem;}
+  h2 { font-size: 1.3rem;}
+  .project-list, .thumb-list, .video-list { grid-template-columns: 1fr;}
+}
